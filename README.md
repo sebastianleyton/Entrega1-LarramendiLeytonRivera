@@ -1,4 +1,5 @@
 # Entrega1-LarramendiLeytonRivera
+Miembros: Marcio Larramendi, Sebastian Leyton, Juan Manuel Rivera
 
 El primer paso para lanzar el servidor es crear la base de datos utilizando los comandos
 
