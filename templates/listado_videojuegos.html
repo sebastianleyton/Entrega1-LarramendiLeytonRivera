@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Listado de Videojuegos</title>
+{% endblock title %}
+
+{% block texto_header %}
+<h1>
+    Listado de Videojuegos
+</h1>
+{% endblock texto_header %}
+
+{% block body %}
+<p>
+    <a href={% url 'crear_videojuego' %}>Crear Videojuego</a>
+</p>
+
+<p>
+    <form action={% url 'listado_videojuegos' %}>
+        {{form}}
+        <button>Buscar</button>
+    </form>
+</p>
+
+<p>
+    {% if listado_videojuegos %}
+        <ul>
+            {% for videojuego in listado_videojuegos %}
+            <li>
+                {{ videojuego.nombre }}
+                {{ videojuego.fecha_lanzamiento }}
+                {{ videojuego.genero }}
+                {{ videojuego.valoracion }}
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        No se encontraron datos.
+    {% endif %}
+</p>
+{% endblock body %}

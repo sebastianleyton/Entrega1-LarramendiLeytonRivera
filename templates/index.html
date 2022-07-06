@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Inicio</title>
-</head>
-<body>
-    <div>Hola es un test de camellsaurio</div>
-    <div>{{ videojuego.valoracion }}</div>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block body %}
+<ul style="display: block;">
+    <li>
+        <h3>
+            <a href={%url 'crear_videojuego'%}>Crear Videojuego</a>
+        </h3>
+    </li>
+    <li>
+        <h3>
+            <a href={%url 'listado_videojuegos'%}>Listado Videojuegos</a>
+        </h3>
+    </li>
+</ul>
+{% endblock %}
