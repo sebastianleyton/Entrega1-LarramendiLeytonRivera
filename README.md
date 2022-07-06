@@ -1,7 +1,11 @@
 # Entrega1-LarramendiLeytonRivera
 
 El primer paso para lanzar el servidor es crear la base de datos utilizando los comandos
+
+
 *python manage.py migrate*
+
+*python manage.py makemigrations*
 
 Para lanzar el servidor web se debe ejecutar el comando
 
