@@ -7,4 +7,4 @@ class FormVideojuego(forms.Form):
     valoracion = forms.IntegerField()
 
 class FormBusquedaVideojuego(forms.Form):
-    nombre = forms.CharField(max_length=50)
+    nombre = forms.CharField(max_length=50, required=False)
