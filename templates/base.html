@@ -77,11 +77,16 @@
 <body>
 
 <a href="/">Inicio</a>
+<a href={% url 'login' %}>Login</a>
 
 
 {% block texto_header %}
+
 {% endblock texto_header %}
 
+{% block despues_del_header %}
+
+{% endblock despues_del_header %}
 
 {% block body %}
 
