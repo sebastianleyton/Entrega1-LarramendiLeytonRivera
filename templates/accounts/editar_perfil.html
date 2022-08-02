@@ -11,6 +11,10 @@
 {% block despues_del_header %}
 
 <p>
+    <a href={% url 'cambiar_password' %}> Cambiar password </a>
+</p>
+
+<p>
     <form action={% url 'editar_perfil' %} method="post" enctype='multipart/form-data'>
         {% csrf_token %}
         <table>

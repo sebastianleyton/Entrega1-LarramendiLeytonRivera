@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login as django_login
 from .forms import MyUserCreationForm, MyUserEditForm
 from django.contrib.auth.decorators import login_required
 from .models import MasDatosUsuario
+from django.contrib.auth.views import PasswordChangeView
 
 
 # Create your views here.
@@ -84,3 +85,8 @@ def editar_perfil(request):
                                    })
 
     return render(request, 'accounts/editar_perfil.html', {'form': form})
+
+
+class ChangePasswordView(PasswordChangeView):
+    template_name = 'accounts/cambio_password.html'
+    success_url = '/accounts/perfil'
