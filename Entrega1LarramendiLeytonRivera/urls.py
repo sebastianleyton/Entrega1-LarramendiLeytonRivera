@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include, re_path
-from Videojuegos.views import inicio, crear_videojuego, listado_videojuegos, acerca_de_nosotros
+from Videojuegos.views import crear_videojuego, listado_videojuegos
 from post import views
 from django.conf import settings
 from django.conf.urls.static import static
+from post.views import inicio, acerca_de_nosotros
 
 from accounts.views import login
 

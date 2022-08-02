@@ -1,6 +1,7 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from post.models import Post
 from .forms import FormBusquedaPost, FormPost
+from django.shortcuts import render, redirect
 
 
 # Create your views here.
@@ -22,6 +23,15 @@ class ListadoPost(ListView):
         context["form"] = FormBusquedaPost()
         return context
 
+def inicio(request):
+
+    ultimos_diez_posts = Post.objects.all().order_by('-id')[:10]
+
+    return render(request, 'index.html', {'listado_posts': ultimos_diez_posts[:3], 'ultimos_diez': ultimos_diez_posts})
+
+
+def acerca_de_nosotros(request):
+    return render(request, 'about.html')
 
 class CrearPost(CreateView):
     model = Post

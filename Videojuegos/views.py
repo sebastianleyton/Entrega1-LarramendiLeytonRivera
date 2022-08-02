@@ -4,12 +4,6 @@ from .forms import FormVideojuego, FormBusquedaVideojuego
 from django.contrib.auth.decorators import login_required
 
 
-def inicio(request):
-    return render(request, 'index.html')
-
-
-def acerca_de_nosotros(request):
-    return render(request, 'about.html')
 
 @login_required()
 def crear_videojuego(request):

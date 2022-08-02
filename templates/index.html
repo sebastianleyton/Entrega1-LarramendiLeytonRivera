@@ -13,4 +13,47 @@
         </h3>
     </li>
 </ul>
+
+<div class="leftcolumn">
+    {% if listado_posts %}
+        <ul>
+            {% for post in listado_posts %}
+            <li>
+                <div class="card">
+                    <div class="titulo"><h2>{{ post.titulo|safe }}</h2></div>
+                    <div class="subtitulo"><h5>{{ post.subtitulo|safe }}, <div class="fecha_creacion">{{ post.fecha_creacion|safe }}</div></h5></div>
+                    {% if post.imagen %}
+                        <div class="postimg">{{ post.imagen }}</div>
+                    {% else %}
+                        <div>NO</div>
+                    {% endif %}
+                    <div class="autor">{{ post.autor|safe }}</div>
+                    <div class="contenido"><p>{{ post.contenido|safe }}</p></div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        No se encontraron datos.
+    {% endif %}
+</div>
+
+<div class="rightcolumn">
+        {% if ultimos_diez %}
+        <ul>
+            <li>
+                <div class="card">
+                    {% for post in ultimos_diez %}
+                        <div class="titulo"><h3>{{ post.titulo|safe }}</h3></div>
+                    {% endfor %}
+                </div>
+            </li>
+
+        </ul>
+    {% else %}
+        No se encontraron datos.
+    {% endif %}
+
+</div>
+
 {% endblock %}
