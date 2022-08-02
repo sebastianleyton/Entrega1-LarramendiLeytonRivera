@@ -1,3 +1,4 @@
+from datetime import date
 from django.contrib.auth.models import User
 from django.db import models
 from ckeditor.fields import RichTextField
@@ -10,7 +11,7 @@ class Post(models.Model):
     subtitulo = models.CharField(max_length=50)
     contenido = RichTextField(blank=True, null=True)
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
-    fecha_creacion = models.DateField()
+    fecha_creacion = models.DateField(default=date.today)
     imagen = models.ImageField(upload_to="imagenes_de_posts/")
     # imagen = models.CharField(max_length=50)
 

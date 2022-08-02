@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from post.models import Post
 from .forms import FormBusquedaPost, FormPost
@@ -40,6 +41,10 @@ class CrearPost(LoginRequiredMixin, CreateView):
     success_url = '/listado_posts'
     template_name = 'crear_post.html'
     # fields = ['titulo', 'subtitulo', 'contenido', 'autor', 'fecha_creacion']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 class EditarPost(LoginRequiredMixin, UpdateView):
