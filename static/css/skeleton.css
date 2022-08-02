@@ -1,4 +1,14 @@
 @charset "UTF-8";
+/* Image */
+.postimg {
+  background-color: #aaa;
+  max-width: 100%;
+  height:auto
+  padding: 20px;
+
+}
+
+
 body {
 
 height: 100%;
@@ -103,10 +113,11 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 
-.card {
-   background-color: white;
+.cardo {
+   background-color: #c4ba9d;
    padding: 20px;
    margin-top: 20px;
+   max-width:1200px;
 }
 
 .row:after {
@@ -115,10 +126,35 @@ input[type=text], input[type=password], input[type=email] {
   clear: both;
 }
 
-/* Image */
-.postimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
+
+.truncate {
+  width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+div.crear_post_menu ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #c4ba9d;
+}
+
+div.crear_post_menu ul li {
+  float: left;
+}
+
+div.crear_post_menu ul li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+div.crear_post_menu ul li a:hover {
+  background-color: #b0a68b;
+}

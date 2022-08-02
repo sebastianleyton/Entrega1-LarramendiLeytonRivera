@@ -9,17 +9,22 @@
 {% endblock texto_header %}
 
 {% block body %}
-<p>
-    <a href={% url 'crear_post' %}>Crear Post</a>
-</p>
-
-<p>
+<div class="crear_post_menu">
+    <ul style="display: block;">
+        <li>
+            <h3>
+                <a href={%url 'crear_post'%}>Crear Post</a>
+            </h3>
+        </li>
+    </ul>
+</div>
+<div style="width:800px;"><p>
     <form action={% url 'listado_posts' %}>
         {{form}}
         <button>Buscar</button>
     </form>
 </p>
-
+</div>
 <p>
     {% if object_list %}
         <ul>
