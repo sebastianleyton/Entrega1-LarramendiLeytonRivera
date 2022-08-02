@@ -13,5 +13,5 @@
 <small>Por: {{ post.autor }}</small>
 <br/>
 <hr>
-{{ post.contenido }}
+{{ post.contenido|safe }}
 {% endblock body %}

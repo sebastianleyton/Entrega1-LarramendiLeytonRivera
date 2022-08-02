@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from Videojuegos.views import inicio, crear_videojuego, listado_videojuegos, acerca_de_nosotros
 from post import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 from accounts.views import login
 
@@ -19,5 +21,5 @@ urlpatterns = [
     path('eliminar_post/<int:pk>', views.EliminarPost.as_view(), name='eliminar_post'),
     # re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -16,7 +16,7 @@
 </p>
 
 <div class="form-group">
-    <form action={% url 'crear_post' %} method="post">
+    <form action={% url 'crear_post' %} method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
             {{form.as_p}}

@@ -11,6 +11,7 @@ class Post(models.Model):
     contenido = RichTextField(blank=True, null=True)
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
     fecha_creacion = models.DateField()
+    imagen = models.ImageField(null=True, blank=True, upload_to="imagenes_de_posts/")
     # imagen = models.CharField(max_length=50)
 
     def __str__(self):
