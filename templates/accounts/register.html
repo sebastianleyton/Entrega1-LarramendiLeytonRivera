@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>Login</title>
+<title>Register</title>
 {% endblock title %}
 
 {% block texto_header %}
 <h1>
-    Login
+    Register
 </h1>
 {% endblock texto_header %}
 
 {% block despues_del_header %}
 
 <p>
-    <form action={% url 'login' %} method="post">
+    <form action={% url 'register' %} method="post">
         {% csrf_token %}
         <table>
             {{form.as_table}}
         </table>
-        <button>Loguearse</button>
+        <button>Registrarse</button>
     </form>
 </p>
 {% endblock despues_del_header %}
