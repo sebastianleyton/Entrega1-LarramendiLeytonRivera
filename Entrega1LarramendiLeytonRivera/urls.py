@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from Videojuegos.views import inicio, crear_videojuego, listado_videojuegos, acerca_de_nosotros
 from post import views
+
 from accounts.views import login
 
 urlpatterns = [
@@ -19,3 +20,4 @@ urlpatterns = [
     # re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
 ]
+
