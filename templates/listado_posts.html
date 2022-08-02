@@ -24,9 +24,15 @@
     {% if object_list %}
         <ul>
             {% for post in object_list %}
+            <hr>
             <li>
+                {% if post.imagen %}
+                    <img src="{{ post.imagen.url }}" width=100 height=100>
+                {% else %}
+                    <div style="width:100px; height:100px;">X</div>
+                {% endif %}
                 <a href="{% url 'mostrar_post' post.pk %}">{{ post.titulo }}</a>
-                - {{ post.autor }}
+                - Creado por: {{ post.autor }}
                 -
                 <a href="{% url 'editar_post' post.pk %}">Editar</a>
                 <a href="{% url 'eliminar_post' post.pk %}">Eliminar</a>
@@ -36,6 +42,7 @@
                 <br/>
             </li>
             {% endfor %}
+            <hr>
         </ul>
     {% else %}
         No se encontraron datos.

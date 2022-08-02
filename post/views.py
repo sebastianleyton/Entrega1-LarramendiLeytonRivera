@@ -2,6 +2,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from post.models import Post
 from .forms import FormBusquedaPost, FormPost
 from django.shortcuts import render, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
@@ -33,7 +34,7 @@ def inicio(request):
 def acerca_de_nosotros(request):
     return render(request, 'about.html')
 
-class CrearPost(CreateView):
+class CrearPost(LoginRequiredMixin, CreateView):
     model = Post
     form_class = FormPost
     success_url = '/listado_posts'
@@ -41,7 +42,7 @@ class CrearPost(CreateView):
     # fields = ['titulo', 'subtitulo', 'contenido', 'autor', 'fecha_creacion']
 
 
-class EditarPost(UpdateView):
+class EditarPost(LoginRequiredMixin, UpdateView):
     model = Post
     form_class = FormPost
     success_url = '/listado_posts'
@@ -49,7 +50,7 @@ class EditarPost(UpdateView):
     # fields = ['titulo', 'subtitulo', 'contenido', 'autor', 'fecha_creacion']
 
 
-class EliminarPost(DeleteView):
+class EliminarPost(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'eliminar_post.html'
     success_url = '/listado_posts'
