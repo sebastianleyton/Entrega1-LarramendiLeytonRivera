@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Listado de Posts</title>
+{% endblock title %}
+
+{% block texto_header %}
+<h1>
+    Listado de Posts
+</h1>
+{% endblock texto_header %}
+
+{% block body %}
+<p>
+    <a href={% url 'crear_post' %}>Crear Post</a>
+</p>
+
+<p>
+    <form action={% url 'listado_posts' %}>
+        {{form}}
+        <button>Buscar</button>
+    </form>
+</p>
+
+<p>
+    {% if listado_posts %}
+        <ul>
+            {% for post in listado_posts %}
+            <li>
+                <a href="{% url 'detalle_post' post.pk %}">{{ post.titulo }}</a>
+                - {{ post.autor }}
+                <br/>
+                {{ post.subtitulo }}
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        No se encontraron datos.
+    {% endif %}
+</p>
+{% endblock body %}
