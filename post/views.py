@@ -1,6 +1,6 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from post.models import Post
-from .forms import FormBusquedaPost
+from .forms import FormBusquedaPost, FormPost
 
 
 # Create your views here.
@@ -25,18 +25,18 @@ class ListadoPost(ListView):
 
 class CrearPost(CreateView):
     model = Post
-    # form_class = FormPost
+    form_class = FormPost
     success_url = '/listado_posts'
     template_name = 'crear_post.html'
-    fields = ['titulo', 'subtitulo', 'contenido', 'autor', 'fecha_creacion']
+    # fields = ['titulo', 'subtitulo', 'contenido', 'autor', 'fecha_creacion']
 
 
 class EditarPost(UpdateView):
     model = Post
-    # form_class = FormPost
+    form_class = FormPost
     success_url = '/listado_posts'
     template_name = 'editar_post.html'
-    fields = ['titulo', 'subtitulo', 'contenido', 'autor', 'fecha_creacion']
+    # fields = ['titulo', 'subtitulo', 'contenido', 'autor', 'fecha_creacion']
 
 
 class EliminarPost(DeleteView):
