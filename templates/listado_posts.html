@@ -23,14 +23,19 @@
 </p>
 
 <p>
-    {% if listado_posts %}
+    {% if object_list %}
         <ul>
-            {% for post in listado_posts %}
+            {% for post in object_list %}
             <li>
-                <a href="{% url 'detalle_post' post.pk %}">{{ post.titulo }}</a>
+                <a href="{% url 'mostrar_post' post.pk %}">{{ post.titulo }}</a>
                 - {{ post.autor }}
+                -
+                <a href="{% url 'editar_post' post.pk %}">Editar</a>
+                <a href="{% url 'eliminar_post' post.pk %}">Eliminar</a>
+
                 <br/>
                 {{ post.subtitulo }}
+                <br/>
             </li>
             {% endfor %}
         </ul>

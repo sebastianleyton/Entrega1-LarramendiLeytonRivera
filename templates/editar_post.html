@@ -2,12 +2,12 @@
 
 
 {% block title %}
-<title>Crear Post</title>
+<title>Editar Post</title>
 {% endblock title %}
 
 {% block texto_header %}
 <h1>
-    Crear Post
+    Editar Post
 </h1>
 {% endblock texto_header %}
 
@@ -18,13 +18,13 @@
 </p>
 
 <div class="form-group">
-    <form action={% url 'crear_post' %} method="post">
+    <form action={% url 'editar_post' post.id %} method="post">
         {% csrf_token %}
         <table>
             {{form.as_p}}
             {{form.media}}
         </table>
-        <button>Crear</button>
+        <button>Editar</button>
     </form>
 </div>
 {% endblock %}
