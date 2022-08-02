@@ -118,6 +118,8 @@ input[type=text], input[type=password], input[type=email] {
    padding: 20px;
    margin-top: 20px;
    max-width:1200px;
+   border-style:solid;
+   border-color:#333;
 }
 
 .row:after {
@@ -150,7 +152,7 @@ div.crear_post_menu ul li a {
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 1px 16px;
   text-decoration: none;
 }
 
