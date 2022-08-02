@@ -20,14 +20,9 @@
             {% for post in listado_posts %}
             <li>
                 <div class="card">
-                    <div class="titulo"><h2>{{ post.titulo|safe }}</h2></div>
-                    <div class="subtitulo"><h5>{{ post.subtitulo|safe }}, <div class="fecha_creacion">{{ post.fecha_creacion|safe }}</div></h5></div>
-                    {% if post.imagen %}
-                        <div class="postimg">{{ post.imagen }}</div>
-                    {% else %}
-                        <div>NO</div>
-                    {% endif %}
-                    <div class="autor">{{ post.autor|safe }}</div>
+                    <div class="titulo"><h2><a href="{% url 'mostrar_post' post.pk %}">{{ post.titulo|safe }}</a></h2></div>
+                    <div class="subtitulo"><h5>{{ post.subtitulo|safe }}, {{ post.fecha_creacion|safe }} por {{ post.autor|safe }}</h5></div>
+                    <div class="postimg"><img src="{{ post.imagen }}" alt="{{post.titulo|safe}}" width="500" height="600"></div>
                     <div class="contenido"><p>{{ post.contenido|safe }}</p></div>
                 </div>
             </li>
@@ -39,19 +34,22 @@
 </div>
 
 <div class="rightcolumn">
+
         {% if ultimos_diez %}
         <ul>
             <li>
                 <div class="card">
+                    <h3>Ultimas 10 Publicaciones</h3>
                     {% for post in ultimos_diez %}
-                        <div class="titulo"><h3>{{ post.titulo|safe }}</h3></div>
+                        <div class="titulo"><h5><a href="{% url 'mostrar_post' post.pk %}">{{ post.titulo|safe }}</a></h5></div>
                     {% endfor %}
                 </div>
             </li>
 
         </ul>
     {% else %}
-        No se encontraron datos.
+        <h3>Ultimas 10 Publicaciones</h3>
+        <h5>No hay publicaciones aun</h5>
     {% endif %}
 
 </div>
