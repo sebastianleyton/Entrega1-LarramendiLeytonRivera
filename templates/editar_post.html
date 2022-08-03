@@ -16,13 +16,15 @@
 </p>
 
 <div class="form-group">
-    <form action={% url 'editar_post' post.id %} method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <table>
-            {{form.as_p}}
-            {{form.media}}
-        </table>
-        <button>Editar</button>
-    </form>
+    <div style="width:800px;">
+        <form action={% url 'editar_post' post.id %} method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{form.as_p}}
+                {{form.media}}
+            </table>
+            <button>Editar</button>
+        </form>
+    </div>
 </div>
 {% endblock %}

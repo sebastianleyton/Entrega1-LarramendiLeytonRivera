@@ -11,15 +11,20 @@
 
 
 {% block body %}
-
-<div class="form-group">
-    <form action={% url 'crear_post' %} method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <table>
-            {{form.as_p}}
-            {{form.media}}
-        </table>
-        <button>Crear</button>
-    </form>
-</div>
+<ul>
+    <li>
+        <div class="form-group">
+            <div style="width:800px;">
+                <form action={% url 'crear_post' %} method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <table>
+                        {{form.as_p}}
+                        {{form.media}}
+                    </table>
+                    <button>Crear</button>
+                </form>
+            </div>
+        </div>
+    </li>
+</ul>
 {% endblock %}
