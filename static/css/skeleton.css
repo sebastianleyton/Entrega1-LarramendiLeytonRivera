@@ -12,7 +12,8 @@
 
 .table {
 	display: flex;   /* Allow the centering to work */
-	align-items: center;
+	align-items: flex-start;
+	margin-top: 80px;
 }
 
 .table img {
@@ -21,9 +22,15 @@
 }
 
 .subtitulo {
+  background-color: #c4ba9d;
+  text-align: center;
+}
+
+.subtitulo2 {
   background-color: #f0ebc5;
   text-align: center;
 }
+
 
 body {
 
