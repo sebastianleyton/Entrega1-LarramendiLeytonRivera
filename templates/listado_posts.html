@@ -28,11 +28,15 @@
                     <div style="width:100px; height:100px;">X</div>
                 {% endif %}
                 <a href="{% url 'mostrar_post' post.pk %}">{{ post.titulo }}</a>
-                - Creado por: {{ post.autor }}
-                -
-                <a href="{% url 'editar_post' post.pk %}">Editar</a>
-                <a href="{% url 'eliminar_post' post.pk %}">Eliminar</a>
+                - Creado por: {{ post.autor }}-
 
+                {% if request.user.is_authenticated %}
+                    {% if post.autor|make_list == request.user.username|make_list %}
+                        <a href="{% url 'editar_post' post.pk %}">Editar</a>
+                        <a href="{% url 'eliminar_post' post.pk %}">Eliminar</a>
+
+                    {% endif %}
+                {% endif %}
                 <br/>
                 {{ post.subtitulo }}
                 <br/>
