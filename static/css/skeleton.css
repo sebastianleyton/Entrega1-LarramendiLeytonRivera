@@ -1,13 +1,29 @@
 @charset "UTF-8";
 /* Image */
 .postimg {
-  background-color: #aaa;
-  max-width: 600px;
-  height:auto
+  background-color: #f0ebc5;
+  #max-width: 600px;
+  #height:auto
   padding: 20px;
+  text-align: center;
 
 }
 
+
+.table {
+	display: flex;   /* Allow the centering to work */
+	align-items: center;
+}
+
+.table img {
+    width: 800px;
+    margin-right: 20px;
+}
+
+.subtitulo {
+  background-color: #f0ebc5;
+  text-align: center;
+}
 
 body {
 

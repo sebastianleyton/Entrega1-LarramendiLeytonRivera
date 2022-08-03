@@ -9,10 +9,21 @@
 {% endblock texto_header %}
 
 {% block body %}
-<h1> {{ post.subtitulo }}</h1>
-<hr>
-{{ post.contenido|safe }}
-<div class="postimg"><img src="{{ post.imagen.url }}" alt="{{post.titulo|safe}}" width="640" height="480"></div>
-<hr>
+
+<div class="subtitulo"> <h4>
+    {{ post.subtitulo }} </h4>
+</div>
+
+
+<div class="table">
+    <img src="{{ post.imagen.url }}" alt="{{post.titulo|safe}}" width="800" height="600">
+    <p>{{ post.contenido|safe }}
+    </p>
+
+</div>
+
+
+
 <small>Por: {{ post.autor }} - {{ post.fecha_creacion }}</small>
 {% endblock body %}
+
