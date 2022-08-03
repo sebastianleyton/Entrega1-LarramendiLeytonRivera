@@ -5,13 +5,14 @@
 {% endblock title %}
 
 {% block texto_header %}
-    Detalle de Post
+    {{ post.titulo }}
 {% endblock texto_header %}
 
 {% block body %}
-<h1> {{ post.titulo }}</h1>
-<small>Por: {{ post.autor }}</small>
-<br/>
+<h1> {{ post.subtitulo }}</h1>
 <hr>
 {{ post.contenido|safe }}
+<div class="postimg"><img src="{{ post.imagen.url }}" alt="{{post.titulo|safe}}" width="auto" height="auto"></div>
+<hr>
+<small>Por: {{ post.autor }} - {{ post.fecha_creacion }}</small>
 {% endblock body %}
