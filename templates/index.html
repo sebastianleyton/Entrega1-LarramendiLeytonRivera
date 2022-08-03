@@ -7,10 +7,10 @@
             {% for post in listado_posts %}
             <li>
                 <div class="cardo">
-                    <div class="titulo"><h2><a href="{% url 'mostrar_post' post.pk %}">{{ post.titulo|safe }}</a></h2></div>
-                    <div class="subtitulo"><h5>{{ post.subtitulo|safe }}, {{ post.fecha_creacion|safe }} por {{ post.autor|safe }}</h5></div>
-                    <div class="postimg"><img src="{{ post.imagen.url }}" alt="{{post.titulo|safe}}" width="600" height="auto"></div>
-                    <div class="contenido"><div class="truncate">{{ post.contenido|safe }}</div></div>
+                    <div class="titulo center"><h2><a href="{% url 'mostrar_post' post.pk %}">{{ post.titulo|safe }}</a></h2></div>
+                    <div class="subtitulo center"><h5>{{ post.subtitulo|safe }}, {{ post.fecha_creacion|safe }} por {{ post.autor|safe }}</h5></div>
+                    <div class="postimg center"><img src="{{ post.imagen.url }}" alt="{{post.titulo|safe}}" width="600" height="auto"></div>
+                    <div class="contenido center"><div class="truncate">{{ post.contenido|safe }}</div></div>
                 </div>
             </li>
             {% endfor %}

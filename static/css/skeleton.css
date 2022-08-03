@@ -61,10 +61,10 @@ div.top-header ul li a:hover {
 
 
 /* Registration/Login Form */
-
+/*
 form {border: 3px solid #f1f1f1;}
 
-
+*/
 #register_form form table tbody tr th label, #login_form table tbody tr th label{
 color:#111;
 
@@ -120,6 +120,7 @@ input[type=text], input[type=password], input[type=email] {
    max-width:1200px;
    border-style:solid;
    border-color:#333;
+   justify-content:center;
 }
 
 .row:after {
@@ -159,4 +160,12 @@ div.crear_post_menu ul li a {
 
 div.crear_post_menu ul li a:hover {
   background-color: #b0a68b;
+}
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
