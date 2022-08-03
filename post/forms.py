@@ -9,7 +9,7 @@ class FormPost(forms.ModelForm):
             'titulo': forms.TextInput(attrs={'class': 'form-control'}),
             'subtitulo': forms.TextInput(attrs={'class': 'form-control'}),
             'contenido': forms.Textarea(attrs={'class': 'form-control'}),
-            'autor': forms.Select(attrs={'id':'autor'}),
+            'autor': forms.Select(attrs={'id': 'autor'}),
             'fecha_creacion': forms.DateInput(attrs={'id': 'fecha'}),
         }
 

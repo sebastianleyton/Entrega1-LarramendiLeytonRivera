@@ -48,6 +48,7 @@
             <li><a href={% url 'acerca_de_nosotros' %}>Acerca de Nosotros</a></li>
 
         {% if request.user.is_authenticated %}
+            <li style="float:right"><a href={% url 'logout' %}>Logout</a></li>
             <li style="float:right;"><a href={% url 'perfil' %}>
                 {% if request.user.masdatosusuario.avatar %}
                 <img src={{request.user.masdatosusuario.avatar.url}} alt="" height="20px">
@@ -55,7 +56,7 @@
                 {{request.user.username}}
 
                 </a></li>
-            <li style="float:right"><a href={% url 'logout' %}>Logout</a></li>
+            <li style="float:right"><a href={% url 'listado_mensajes' %}>Mensajes</a></li>
         {% endif %}
 
     </ul>
