@@ -24,10 +24,12 @@
     <ul>
         <li><a href="/">Inicio</a></li>
         {% if request.user.is_authenticated %}
+            <li><a href={%url 'crear_post'%}>Crear Post</a></li>
         {% else %}
             <li style="float:right"><a href={% url 'login' %}>Login</a></li>
             <li style="float:right"><a href={% url 'register' %}>Registro</a></li>
         {% endif %}
+            <li><a href={%url 'listado_posts'%}>Listado Posts</a></li>
             <li><a href={% url 'acerca_de_nosotros' %}>Acerca de Nosotros</a></li>
 
         {% if request.user.is_authenticated %}

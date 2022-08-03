@@ -11,16 +11,6 @@
 
 
 {% block body %}
-<div class="crear_post_menu">
-    <ul style="display: block;">
-
-        <li>
-            <h3>
-                <button class="boton_post"><a href={%url 'listado_posts'%}>Listado Posts</a></button>
-            </h3>
-        </li>
-    </ul>
-</div>
 
 <div class="form-group">
     <form action={% url 'crear_post' %} method="post" enctype="multipart/form-data">
