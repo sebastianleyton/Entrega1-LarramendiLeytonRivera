@@ -12,7 +12,7 @@
 <h1> {{ post.subtitulo }}</h1>
 <hr>
 {{ post.contenido|safe }}
-<div class="postimg"><img src="{{ post.imagen.url }}" alt="{{post.titulo|safe}}" width="auto" height="auto"></div>
+<div class="postimg"><img src="{{ post.imagen.url }}" alt="{{post.titulo|safe}}" width="640" height="480"></div>
 <hr>
 <small>Por: {{ post.autor }} - {{ post.fecha_creacion }}</small>
 {% endblock body %}
