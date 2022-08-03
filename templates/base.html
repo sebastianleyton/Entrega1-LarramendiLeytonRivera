@@ -18,7 +18,6 @@
             document.querySelector('label[for=fecha]').hidden = true;
             var user = document.getElementById("usuario").textContent
             $("select option").each(function(){
-                console.log($(this).text());
                 if($(this).text()==user){
                     $(this).attr("selected","selected");
                     }
