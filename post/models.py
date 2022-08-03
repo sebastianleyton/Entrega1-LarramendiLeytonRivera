@@ -13,7 +13,6 @@ class Post(models.Model):
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
     fecha_creacion = models.DateField(default=date.today)
     imagen = models.ImageField(upload_to="imagenes_de_posts/")
-    # imagen = models.CharField(max_length=50)
 
     def __str__(self):
         return self.titulo + ' | ' + str(self.autor)

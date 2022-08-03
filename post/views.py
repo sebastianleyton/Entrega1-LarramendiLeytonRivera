@@ -1,8 +1,7 @@
-from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from post.models import Post
 from .forms import FormBusquedaPost, FormPost
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -40,7 +39,6 @@ class CrearPost(LoginRequiredMixin, CreateView):
     form_class = FormPost
     success_url = '/listado_posts'
     template_name = 'crear_post.html'
-    # fields = ['titulo', 'subtitulo', 'contenido', 'autor', 'fecha_creacion']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -52,7 +50,6 @@ class EditarPost(LoginRequiredMixin, UpdateView):
     form_class = FormPost
     success_url = '/listado_posts'
     template_name = 'editar_post.html'
-    # fields = ['titulo', 'subtitulo', 'contenido', 'autor', 'fecha_creacion']
 
 
 class EliminarPost(LoginRequiredMixin, DeleteView):

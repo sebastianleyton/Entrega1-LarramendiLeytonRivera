@@ -1,6 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include, re_path
-from Videojuegos.views import crear_videojuego, listado_videojuegos
+from django.urls import path, include
 from post import views as pviews
 from mensajeria import views
 from django.conf import settings
@@ -12,8 +11,6 @@ from accounts.views import login
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio),
-    path('crear_videojuego', crear_videojuego, name='crear_videojuego'),
-    path('listado_videojuegos', listado_videojuegos, name='listado_videojuegos'),
     path('about', acerca_de_nosotros, name='acerca_de_nosotros'),
     path('accounts/', include('accounts.urls')),
     path('crear_post', pviews.CrearPost.as_view(), name='crear_post'),
