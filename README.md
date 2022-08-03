@@ -14,6 +14,10 @@ Para lanzar el servidor web se debe ejecutar el comando
 
 Levantado el sitio se debe entrar a la URL generada en la terminal, usualmente es http://127.0.0.1:8000/
  
+
+Video explicativo del sitio
+https://drive.google.com/file/d/1IaokvkRkI7pJBn8drbz3mEs6VQ7-n0I8/view?usp=sharing 
+ 
 Dentro del sitio se pueden ver posts publicados. En caso de que los haya.
 
 Funcionalidades
