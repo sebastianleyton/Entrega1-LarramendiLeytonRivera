@@ -9,12 +9,16 @@
 {% endblock texto_header %}
 
 {% block body %}
-<div style="width:800px;"><p>
-    <form action={% url 'listado_posts' %}>
-        {{form}}
-        <button>Buscar</button>
-    </form>
-</p>
+
+<div style="width:800px;">
+    <ul>
+        <li>
+        <form action={% url 'listado_posts' %}>
+            {{form}}
+            <button>Buscar</button>
+        </form>
+        </li>
+    </ul>
 </div>
 <p>
     {% if object_list %}
